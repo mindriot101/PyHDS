@@ -1,3 +1,9 @@
+'''
+Requirements: pyndf, contextlib
+
+'''
+
+
 from starlink import hds
 from contextlib import contextmanager
 
@@ -36,9 +42,18 @@ class HDS(object):
         assert self.loc.valid
 
     def _go_to_index(self, index):
+        '''
+        Moves the index locator to the requested data index
+        '''
         assert index < self.fptr.ncomp
         self.loc = self.fptr.index(index)
         assert self.loc.valid
+
+    def __call__(self, name):
+        '''
+        Alternative to using `self.get`
+        '''
+        return self.get(name)
 
 
     def get(self, name, withtype=False):
