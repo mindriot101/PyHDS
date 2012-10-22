@@ -55,6 +55,13 @@ class HDS(object):
         '''
         return self.get(name)
 
+    def __getitem__(self, name):
+        '''
+        Alternative to using `self.get`
+        '''
+        return self.get(name)
+
+
 
     def get(self, name, withtype=False):
         '''
