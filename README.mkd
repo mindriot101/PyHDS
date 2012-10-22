@@ -1,0 +1,4 @@
+# PyHDS
+
+A simple wrapper around pyndf to handle starlink hds files. It creates a class
+`hds` which can retrieve information from a hds file.
