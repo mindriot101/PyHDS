@@ -1,6 +1,18 @@
 '''
 Requirements: pyndf, contextlib
 
+Examples:
+
+* Printing out the file structure
+
+>>> with hds_open('filename.hds') as infile:
+    print infile.structure()
+
+* Accessing data at a specific locator
+>>> with hds_open('filename.hds') as infile:
+    print infile.get('key')
+    print infile('key')
+    print infile['key']
 '''
 
 
